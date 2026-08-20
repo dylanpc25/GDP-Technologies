@@ -1,0 +1,433 @@
+.services {
+  position: relative;
+
+  padding: 120px 0;
+
+  background: #f7f9fc;
+}
+
+.container {
+  width: min(1200px, 92%);
+  margin: 0 auto;
+}
+
+/* =========================
+   ENCABEZADO
+========================= */
+
+.header {
+  display: grid;
+  grid-template-columns: 1.15fr 0.85fr;
+  align-items: end;
+
+  gap: 70px;
+
+  margin-bottom: 60px;
+}
+
+.eyebrow {
+  display: block;
+
+  margin-bottom: 16px;
+
+  color: var(--gdp-blue);
+
+  font-size: 12px;
+  font-weight: 700;
+
+  letter-spacing: 2.5px;
+}
+
+.header h2 {
+  max-width: 650px;
+
+  color: var(--gdp-dark-blue);
+
+  font-size: clamp(38px, 4vw, 56px);
+  font-weight: 800;
+
+  line-height: 1.05;
+  letter-spacing: -2px;
+}
+
+.header h2 span {
+  color: var(--gdp-blue);
+}
+
+.header > p {
+  max-width: 480px;
+
+  color: #667085;
+
+  font-size: 16px;
+  line-height: 1.75;
+}
+
+/* =========================
+   GRID
+========================= */
+
+.grid {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+
+  gap: 20px;
+}
+
+/* =========================
+   TARJETAS
+========================= */
+
+.card {
+  position: relative;
+
+  min-height: 355px;
+
+  display: flex;
+  flex-direction: column;
+
+  padding: 30px;
+
+  overflow: hidden;
+
+  border: 1px solid #e4e7ec;
+  border-radius: 20px;
+
+  background: #ffffff;
+
+  transition:
+    transform 0.25s ease,
+    box-shadow 0.25s ease,
+    border-color 0.25s ease;
+}
+
+.card:hover {
+  transform: translateY(-6px);
+
+  border-color: rgba(7, 94, 232, 0.2);
+
+  box-shadow: 0 24px 50px rgba(7, 23, 45, 0.08);
+}
+
+.cardTop {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+
+  margin-bottom: 38px;
+}
+
+.icon {
+  width: 48px;
+  height: 48px;
+
+  display: flex;
+  align-items: center;
+  justify-content: center;
+
+  border-radius: 12px;
+
+  background: rgba(7, 94, 232, 0.08);
+
+  color: var(--gdp-blue);
+
+  font-size: 15px;
+  font-weight: 700;
+}
+
+.number {
+  color: #c5cad3;
+
+  font-size: 12px;
+  font-weight: 600;
+
+  letter-spacing: 1px;
+}
+
+/* =========================
+   CONTENIDO
+========================= */
+
+.cardContent {
+  margin-bottom: 24px;
+}
+
+.cardContent h3 {
+  margin-bottom: 13px;
+
+  color: var(--gdp-dark-blue);
+
+  font-size: 23px;
+  font-weight: 700;
+
+  letter-spacing: -0.6px;
+}
+
+.cardContent p {
+  color: #667085;
+
+  font-size: 14px;
+  line-height: 1.7;
+}
+
+/* =========================
+   TAGS
+========================= */
+
+.tags {
+  display: flex;
+  flex-wrap: wrap;
+
+  gap: 7px;
+
+  margin-bottom: 28px;
+}
+
+.tags span {
+  padding: 6px 9px;
+
+  border: 1px solid #eaecf0;
+  border-radius: 100px;
+
+  background: #f9fafb;
+
+  color: #667085;
+
+  font-size: 10px;
+  font-weight: 600;
+}
+
+/* =========================
+   LINK
+========================= */
+
+.cardLink {
+  margin-top: auto;
+
+  width: fit-content;
+
+  display: inline-flex;
+  align-items: center;
+
+  gap: 8px;
+
+  color: var(--gdp-dark-blue);
+
+  font-size: 12px;
+  font-weight: 700;
+}
+
+.cardLink span {
+  color: var(--gdp-blue);
+
+  font-size: 16px;
+
+  transition: transform 0.2s ease;
+}
+
+.cardLink:hover span {
+  transform: translateX(4px);
+}
+
+/* =========================
+   CTA
+========================= */
+
+.ctaCard {
+  position: relative;
+
+  min-height: 355px;
+
+  overflow: hidden;
+
+  border-radius: 20px;
+
+  background:
+    linear-gradient(
+      145deg,
+      #07172d 0%,
+      #0a264a 62%,
+      #075ee8 150%
+    );
+
+  color: #ffffff;
+}
+
+.ctaGlow {
+  position: absolute;
+
+  right: -100px;
+  bottom: -120px;
+
+  width: 300px;
+  height: 300px;
+
+  border-radius: 50%;
+
+  background: rgba(7, 94, 232, 0.7);
+
+  filter: blur(90px);
+}
+
+.ctaContent {
+  position: relative;
+  z-index: 2;
+
+  height: 100%;
+
+  display: flex;
+  flex-direction: column;
+
+  padding: 32px;
+}
+
+.ctaLabel {
+  display: block;
+
+  margin-bottom: 40px;
+
+  color: #74adff;
+
+  font-size: 10px;
+  font-weight: 700;
+
+  letter-spacing: 2.3px;
+}
+
+.ctaContent h3 {
+  margin-bottom: 15px;
+
+  color: #ffffff;
+
+  font-size: 27px;
+  font-weight: 700;
+
+  line-height: 1.2;
+  letter-spacing: -0.8px;
+}
+
+.ctaContent p {
+  max-width: 340px;
+
+  margin-bottom: 28px;
+
+  color: rgba(255, 255, 255, 0.6);
+
+  font-size: 13px;
+  line-height: 1.7;
+}
+
+.ctaButton {
+  width: fit-content;
+
+  margin-top: auto;
+
+  display: inline-flex;
+  align-items: center;
+
+  gap: 10px;
+
+  padding: 12px 17px;
+
+  border-radius: 9px;
+
+  background: #ffffff;
+
+  color: var(--gdp-dark-blue);
+
+  font-size: 12px;
+  font-weight: 700;
+
+  transition:
+    transform 0.2s ease,
+    box-shadow 0.2s ease;
+}
+
+.ctaButton span {
+  color: var(--gdp-blue);
+
+  font-size: 17px;
+
+  transition: transform 0.2s ease;
+}
+
+.ctaButton:hover {
+  transform: translateY(-2px);
+
+  box-shadow: 0 12px 25px rgba(0, 0, 0, 0.15);
+}
+
+.ctaButton:hover span {
+  transform: translateX(3px);
+}
+
+/* =========================
+   TABLET
+========================= */
+
+@media (max-width: 1000px) {
+  .services {
+    padding: 95px 0;
+  }
+
+  .header {
+    grid-template-columns: 1fr;
+
+    gap: 25px;
+  }
+
+  .header > p {
+    max-width: 650px;
+  }
+
+  .grid {
+    grid-template-columns: repeat(2, 1fr);
+  }
+}
+
+/* =========================
+   MOBILE
+========================= */
+
+@media (max-width: 650px) {
+  .services {
+    padding: 75px 0;
+  }
+
+  .header {
+    margin-bottom: 40px;
+  }
+
+  .header h2 {
+    font-size: 37px;
+
+    letter-spacing: -1.5px;
+  }
+
+  .header > p {
+    font-size: 14px;
+  }
+
+  .grid {
+    grid-template-columns: 1fr;
+  }
+
+  .card,
+  .ctaCard {
+    min-height: auto;
+  }
+
+  .card {
+    padding: 26px;
+  }
+
+  .cardTop {
+    margin-bottom: 28px;
+  }
+
+  .ctaContent {
+    min-height: 330px;
+
+    padding: 28px;
+  }
+}

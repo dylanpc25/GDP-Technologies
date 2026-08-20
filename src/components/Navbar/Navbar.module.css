@@ -1,0 +1,152 @@
+.header {
+  position: sticky;
+  top: 0;
+  z-index: 1000;
+
+  width: 100%;
+  border-bottom: 1px solid rgba(255, 255, 255, 0.08);
+
+  background: #07172d;
+  backdrop-filter: blur(10px);
+}
+
+.navbar {
+  width: min(1200px, 92%);
+  height: 88px;
+  margin: 0 auto;
+
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 32px;
+}
+
+.logoWrapper {
+  display: flex;
+  align-items: center;
+  flex-shrink: 0;
+}
+
+.logoBox {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+
+  padding: 8px 14px;
+
+  border: 1px solid rgba(255, 255, 255, 0.1);
+  border-radius: 18px;
+
+  background: rgba(255, 255, 255, 0.06);
+  box-shadow: 0 10px 24px rgba(0, 0, 0, 0.18);
+}
+
+.logoImage {
+  width: 165px;
+  height: auto;
+  display: block;
+  border-radius: 12px;
+}
+
+.links {
+  display: flex;
+  align-items: center;
+  gap: 34px;
+}
+
+.links a {
+  color: rgba(255, 255, 255, 0.88);
+  font-size: 15px;
+  font-weight: 500;
+  transition: color 0.2s ease, opacity 0.2s ease;
+}
+
+.links a:hover {
+  color: #4c8dff;
+}
+
+.contactButton {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+
+  min-height: 46px;
+  padding: 0 20px;
+
+  border-radius: 10px;
+  background: #075ee8;
+  color: #ffffff;
+
+  font-size: 14px;
+  font-weight: 600;
+
+  box-shadow: 0 10px 24px rgba(7, 94, 232, 0.28);
+  transition:
+    transform 0.2s ease,
+    box-shadow 0.2s ease,
+    opacity 0.2s ease;
+}
+
+.contactButton:hover {
+  transform: translateY(-1px);
+  box-shadow: 0 14px 28px rgba(7, 94, 232, 0.34);
+}
+
+@media (max-width: 900px) {
+  .navbar {
+    height: 80px;
+  }
+
+  .logoImage {
+    width: 145px;
+  }
+
+  .links {
+    gap: 22px;
+  }
+}
+
+@media (max-width: 768px) {
+  .navbar {
+    height: 78px;
+  }
+
+  .logoBox {
+    padding: 7px 12px;
+    border-radius: 16px;
+  }
+
+  .logoImage {
+    width: 132px;
+  }
+
+  .links {
+    display: none;
+  }
+
+  .contactButton {
+    min-height: 42px;
+    padding: 0 16px;
+    font-size: 13px;
+  }
+}
+
+@media (max-width: 480px) {
+  .navbar {
+    width: min(94%, 1200px);
+    gap: 16px;
+  }
+
+  .logoImage {
+    width: 118px;
+  }
+
+  .contactButton {
+    padding: 0 14px;
+    font-size: 12px;
+  }
+}
+
+.active {
+  color: #4c8dff !important;
+}

@@ -1,0 +1,278 @@
+.footer {
+  width: 100%;
+  padding: 75px 0 28px;
+
+  background:
+    radial-gradient(
+      circle at 90% 15%,
+      rgba(7, 94, 232, 0.16),
+      transparent 28%
+    ),
+    #07172d;
+
+  color: #ffffff;
+}
+
+.container {
+  width: min(1200px, 92%);
+  margin: 0 auto;
+}
+
+/* =========================
+   PARTE SUPERIOR
+========================= */
+
+.top {
+  display: grid;
+  grid-template-columns: 1.35fr 0.75fr 1fr 1fr;
+
+  gap: 55px;
+
+  align-items: start;
+}
+
+/* =========================
+   MARCA
+========================= */
+
+.brand {
+  max-width: 330px;
+}
+
+.logoBox {
+  width: fit-content;
+
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+
+  margin-bottom: 22px;
+  padding: 8px 13px;
+
+  border: 1px solid rgba(255, 255, 255, 0.1);
+  border-radius: 17px;
+
+  background: rgba(255, 255, 255, 0.06);
+}
+
+.logo {
+  width: 165px;
+  height: auto;
+
+  border-radius: 11px;
+}
+
+.brand p {
+  max-width: 320px;
+
+  color: rgba(255, 255, 255, 0.55);
+
+  font-size: 13px;
+  line-height: 1.8;
+}
+
+/* =========================
+   COLUMNAS
+========================= */
+
+.column {
+  display: flex;
+  flex-direction: column;
+
+  gap: 11px;
+}
+
+.column h3 {
+  margin-bottom: 8px;
+
+  color: #ffffff;
+
+  font-size: 13px;
+  font-weight: 700;
+
+  letter-spacing: 0.3px;
+}
+
+.column a {
+  width: fit-content;
+
+  color: rgba(255, 255, 255, 0.55);
+
+  font-size: 12px;
+  line-height: 1.5;
+
+  transition:
+    color 0.2s ease,
+    transform 0.2s ease;
+}
+
+.column a:hover {
+  color: #ffffff;
+
+  transform: translateX(3px);
+}
+
+.contactText {
+  max-width: 230px;
+
+  margin-bottom: 9px;
+
+  color: rgba(255, 255, 255, 0.55);
+
+  font-size: 12px;
+  line-height: 1.7;
+}
+
+/* =========================
+   BOTÓN
+========================= */
+
+.column .contactButton {
+  width: fit-content;
+
+  display: inline-flex;
+  align-items: center;
+
+  gap: 10px;
+
+  margin-top: 5px;
+  padding: 11px 16px;
+
+  border-radius: 9px;
+
+  background: #075ee8;
+
+  color: #ffffff;
+
+  font-size: 12px;
+  font-weight: 700;
+
+  box-shadow: 0 10px 24px rgba(7, 94, 232, 0.22);
+
+  transition:
+    transform 0.2s ease,
+    box-shadow 0.2s ease;
+}
+
+.column .contactButton:hover {
+  color: #ffffff;
+
+  transform: translateY(-2px);
+
+  box-shadow: 0 14px 28px rgba(7, 94, 232, 0.3);
+}
+
+.contactButton span {
+  font-size: 16px;
+
+  transition: transform 0.2s ease;
+}
+
+.contactButton:hover span {
+  transform: translateX(3px);
+}
+
+/* =========================
+   DIVISOR
+========================= */
+
+.divider {
+  width: 100%;
+  height: 1px;
+
+  margin: 55px 0 25px;
+
+  background: rgba(255, 255, 255, 0.08);
+}
+
+/* =========================
+   PARTE INFERIOR
+========================= */
+
+.bottom {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+
+  gap: 30px;
+}
+
+.bottom p {
+  color: rgba(255, 255, 255, 0.38);
+
+  font-size: 11px;
+}
+
+.bottomLinks {
+  display: flex;
+  align-items: center;
+
+  gap: 18px;
+}
+
+.bottomLinks span {
+  color: rgba(255, 255, 255, 0.38);
+
+  font-size: 10px;
+}
+
+/* =========================
+   TABLET
+========================= */
+
+@media (max-width: 950px) {
+  .footer {
+    padding-top: 60px;
+  }
+
+  .top {
+    grid-template-columns: repeat(2, 1fr);
+
+    gap: 45px;
+  }
+
+  .brand {
+    max-width: 420px;
+  }
+}
+
+/* =========================
+   MOBILE
+========================= */
+
+@media (max-width: 600px) {
+  .footer {
+    padding: 50px 0 24px;
+  }
+
+  .top {
+    grid-template-columns: 1fr;
+
+    gap: 38px;
+  }
+
+  .brand {
+    max-width: 100%;
+  }
+
+  .brand p {
+    max-width: 100%;
+  }
+
+  .divider {
+    margin: 40px 0 22px;
+  }
+
+  .bottom {
+    flex-direction: column;
+    align-items: flex-start;
+
+    gap: 14px;
+  }
+
+  .bottomLinks {
+    flex-wrap: wrap;
+
+    gap: 10px 16px;
+  }
+}

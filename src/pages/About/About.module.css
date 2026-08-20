@@ -1,0 +1,840 @@
+.about {
+  width: 100%;
+  overflow: hidden;
+
+  background: #ffffff;
+}
+
+/* =========================
+   GENERAL
+========================= */
+
+.container {
+  width: min(1200px, 92%);
+  margin: 0 auto;
+}
+
+.eyebrow {
+  display: block;
+
+  margin-bottom: 17px;
+
+  color: var(--gdp-blue);
+
+  font-size: 12px;
+  font-weight: 700;
+
+  letter-spacing: 2.6px;
+}
+
+/* =========================
+   HERO
+========================= */
+
+.hero {
+  position: relative;
+
+  padding: 105px 0 120px;
+
+  overflow: hidden;
+
+  background:
+    radial-gradient(
+      circle at 78% 30%,
+      rgba(7, 94, 232, 0.13),
+      transparent 30%
+    ),
+    linear-gradient(
+      180deg,
+      #f8fbff 0%,
+      #ffffff 100%
+    );
+}
+
+.heroGlow {
+  position: absolute;
+  top: -150px;
+  right: 10%;
+
+  width: 500px;
+  height: 500px;
+
+  border-radius: 50%;
+
+  background: rgba(7, 94, 232, 0.08);
+
+  filter: blur(100px);
+}
+
+.hero .container {
+  position: relative;
+  z-index: 2;
+
+  display: grid;
+  grid-template-columns: 1fr 0.9fr;
+  align-items: center;
+
+  gap: 90px;
+}
+
+.heroContent {
+  max-width: 670px;
+}
+
+.heroContent h1 {
+  margin-bottom: 27px;
+
+  color: var(--gdp-dark-blue);
+
+  font-size: clamp(50px, 5vw, 74px);
+  font-weight: 800;
+
+  line-height: 1;
+  letter-spacing: -3.3px;
+}
+
+.heroContent h1 span {
+  color: var(--gdp-blue);
+}
+
+.heroContent p {
+  max-width: 610px;
+
+  color: #667085;
+
+  font-size: 18px;
+  line-height: 1.75;
+}
+
+/* =========================
+   HERO CARD
+========================= */
+
+.heroCard {
+  overflow: hidden;
+
+  border: 1px solid rgba(255, 255, 255, 0.08);
+  border-radius: 22px;
+
+  background:
+    linear-gradient(
+      145deg,
+      #07172d,
+      #0a2343 65%,
+      #075ee8 160%
+    );
+
+  color: #ffffff;
+
+  box-shadow: 0 35px 80px rgba(7, 23, 45, 0.18);
+}
+
+.heroCardTop {
+  min-height: 55px;
+
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+
+  padding: 0 24px;
+
+  border-bottom: 1px solid rgba(255, 255, 255, 0.08);
+
+  color: rgba(255, 255, 255, 0.4);
+
+  font-size: 10px;
+  font-weight: 600;
+
+  letter-spacing: 1.5px;
+}
+
+.heroCardContent {
+  padding: 45px 38px 38px;
+}
+
+.cardLabel {
+  display: block;
+
+  margin-bottom: 18px;
+
+  color: #73aaff;
+
+  font-size: 10px;
+  font-weight: 700;
+
+  letter-spacing: 2.4px;
+}
+
+.heroCardContent h2 {
+  max-width: 400px;
+
+  margin-bottom: 48px;
+
+  font-size: 31px;
+  line-height: 1.25;
+
+  letter-spacing: -1px;
+}
+
+.cardFooter {
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+
+  gap: 15px;
+}
+
+.cardFooter > div {
+  display: flex;
+  flex-direction: column;
+
+  gap: 5px;
+
+  padding-top: 16px;
+
+  border-top: 1px solid rgba(255, 255, 255, 0.12);
+}
+
+.cardFooter strong {
+  font-size: 13px;
+}
+
+.cardFooter span {
+  color: rgba(255, 255, 255, 0.45);
+
+  font-size: 11px;
+}
+
+/* =========================
+   STORY
+========================= */
+
+.story {
+  padding: 120px 0;
+}
+
+.storyGrid {
+  display: grid;
+  grid-template-columns: 0.9fr 1.1fr;
+
+  gap: 110px;
+}
+
+.sectionTitle h2 {
+  max-width: 500px;
+
+  color: var(--gdp-dark-blue);
+
+  font-size: clamp(38px, 4vw, 52px);
+  line-height: 1.08;
+
+  letter-spacing: -2px;
+}
+
+.storyText {
+  display: flex;
+  flex-direction: column;
+
+  gap: 24px;
+}
+
+.storyText p {
+  color: #667085;
+
+  font-size: 16px;
+  line-height: 1.85;
+}
+
+/* =========================
+   MISIÓN
+========================= */
+
+.missionSection {
+  padding: 0 0 120px;
+}
+
+.missionGrid {
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+
+  gap: 20px;
+}
+
+.missionCard {
+  position: relative;
+
+  min-height: 390px;
+
+  padding: 42px;
+
+  overflow: hidden;
+
+  border: 1px solid #e4e7ec;
+  border-radius: 22px;
+
+  background: #f8fafc;
+}
+
+.visionCard {
+  background: #07172d;
+
+  border-color: #07172d;
+
+  color: #ffffff;
+}
+
+.missionNumber {
+  margin-bottom: 65px;
+
+  color: #c8ced8;
+
+  font-size: 13px;
+  font-weight: 700;
+}
+
+.visionCard .missionNumber {
+  color: rgba(255, 255, 255, 0.25);
+}
+
+.smallTitle {
+  display: block;
+
+  margin-bottom: 15px;
+
+  color: var(--gdp-blue);
+
+  font-size: 10px;
+  font-weight: 700;
+
+  letter-spacing: 2.3px;
+}
+
+.visionCard .smallTitle {
+  color: #70a9ff;
+}
+
+.missionCard h3 {
+  max-width: 450px;
+
+  margin-bottom: 18px;
+
+  color: var(--gdp-dark-blue);
+
+  font-size: 29px;
+  line-height: 1.25;
+
+  letter-spacing: -0.9px;
+}
+
+.visionCard h3 {
+  color: #ffffff;
+}
+
+.missionCard p {
+  max-width: 500px;
+
+  color: #667085;
+
+  font-size: 14px;
+  line-height: 1.8;
+}
+
+.visionCard p {
+  color: rgba(255, 255, 255, 0.55);
+}
+
+/* =========================
+   PROCESO
+========================= */
+
+.processSection {
+  padding: 115px 0;
+
+  background: #f7f9fc;
+}
+
+.processHeader {
+  max-width: 700px;
+
+  margin-bottom: 65px;
+}
+
+.processHeader h2 {
+  color: var(--gdp-dark-blue);
+
+  font-size: clamp(40px, 4vw, 56px);
+  line-height: 1.06;
+
+  letter-spacing: -2px;
+}
+
+.processHeader h2 span {
+  color: var(--gdp-blue);
+}
+
+.processGrid {
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+
+  gap: 22px;
+}
+
+.processCard {
+  min-height: 270px;
+
+  padding: 28px;
+
+  border: 1px solid #e4e7ec;
+  border-radius: 18px;
+
+  background: #ffffff;
+
+  transition:
+    transform 0.2s ease,
+    box-shadow 0.2s ease;
+}
+
+.processCard:hover {
+  transform: translateY(-5px);
+
+  box-shadow: 0 18px 35px rgba(7, 23, 45, 0.07);
+}
+
+.processNumber {
+  color: var(--gdp-blue);
+
+  font-size: 11px;
+  font-weight: 700;
+}
+
+.processLine {
+  width: 100%;
+  height: 1px;
+
+  margin: 25px 0;
+
+  background: #e4e7ec;
+}
+
+.processCard h3 {
+  margin-bottom: 12px;
+
+  color: var(--gdp-dark-blue);
+
+  font-size: 21px;
+}
+
+.processCard p {
+  color: #667085;
+
+  font-size: 13px;
+  line-height: 1.75;
+}
+
+/* =========================
+   VALORES
+========================= */
+
+.valuesSection {
+  padding: 120px 0;
+}
+
+.valuesHeader {
+  display: grid;
+  grid-template-columns: 1fr 0.7fr;
+  align-items: end;
+
+  gap: 70px;
+
+  margin-bottom: 60px;
+}
+
+.valuesHeader h2 {
+  max-width: 600px;
+
+  color: var(--gdp-dark-blue);
+
+  font-size: clamp(39px, 4vw, 53px);
+  line-height: 1.08;
+
+  letter-spacing: -2px;
+}
+
+.valuesHeader > p {
+  max-width: 430px;
+
+  color: #667085;
+
+  font-size: 15px;
+  line-height: 1.8;
+}
+
+.valuesGrid {
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+
+  gap: 18px;
+}
+
+.valueCard {
+  min-height: 260px;
+
+  padding: 28px;
+
+  border: 1px solid #e4e7ec;
+  border-radius: 18px;
+
+  background: #ffffff;
+
+  transition:
+    transform 0.2s ease,
+    border-color 0.2s ease,
+    box-shadow 0.2s ease;
+}
+
+.valueCard:hover {
+  transform: translateY(-4px);
+
+  border-color: rgba(7, 94, 232, 0.2);
+
+  box-shadow: 0 18px 35px rgba(7, 23, 45, 0.06);
+}
+
+.valueNumber {
+  display: block;
+
+  margin-bottom: 55px;
+
+  color: #c7ccd5;
+
+  font-size: 11px;
+  font-weight: 700;
+}
+
+.valueCard h3 {
+  margin-bottom: 12px;
+
+  color: var(--gdp-dark-blue);
+
+  font-size: 21px;
+}
+
+.valueCard p {
+  color: #667085;
+
+  font-size: 13px;
+  line-height: 1.75;
+}
+
+/* =========================
+   CTA
+========================= */
+
+.ctaSection {
+  padding: 0 0 120px;
+}
+
+.cta {
+  position: relative;
+
+  min-height: 315px;
+
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+
+  gap: 60px;
+
+  padding: 60px;
+
+  overflow: hidden;
+
+  border-radius: 24px;
+
+  background:
+    linear-gradient(
+      135deg,
+      #07172d 0%,
+      #0a2445 65%,
+      #075ee8 160%
+    );
+
+  color: #ffffff;
+}
+
+.ctaGlow {
+  position: absolute;
+  right: -80px;
+  bottom: -170px;
+
+  width: 400px;
+  height: 400px;
+
+  border-radius: 50%;
+
+  background: rgba(7, 94, 232, 0.65);
+
+  filter: blur(110px);
+}
+
+.ctaContent {
+  position: relative;
+  z-index: 2;
+
+  max-width: 690px;
+}
+
+.ctaContent > span {
+  display: block;
+
+  margin-bottom: 15px;
+
+  color: #77adff;
+
+  font-size: 10px;
+  font-weight: 700;
+
+  letter-spacing: 2.5px;
+}
+
+.ctaContent h2 {
+  margin-bottom: 15px;
+
+  font-size: clamp(32px, 4vw, 46px);
+  line-height: 1.08;
+
+  letter-spacing: -1.6px;
+}
+
+.ctaContent p {
+  max-width: 600px;
+
+  color: rgba(255, 255, 255, 0.55);
+
+  font-size: 14px;
+  line-height: 1.7;
+}
+
+.ctaButton {
+  position: relative;
+  z-index: 2;
+
+  flex-shrink: 0;
+
+  display: inline-flex;
+  align-items: center;
+
+  gap: 12px;
+
+  padding: 15px 20px;
+
+  border-radius: 10px;
+
+  background: #ffffff;
+
+  color: var(--gdp-dark-blue);
+
+  font-size: 13px;
+  font-weight: 700;
+
+  transition:
+    transform 0.2s ease,
+    box-shadow 0.2s ease;
+}
+
+.ctaButton span {
+  color: var(--gdp-blue);
+
+  font-size: 18px;
+
+  transition: transform 0.2s ease;
+}
+
+.ctaButton:hover {
+  transform: translateY(-2px);
+
+  box-shadow: 0 15px 30px rgba(0, 0, 0, 0.18);
+}
+
+.ctaButton:hover span {
+  transform: translateX(4px);
+}
+
+/* =========================
+   TABLET
+========================= */
+
+@media (max-width: 950px) {
+  .hero {
+    padding: 80px 0 95px;
+  }
+
+  .hero .container {
+    grid-template-columns: 1fr;
+
+    gap: 55px;
+  }
+
+  .heroContent {
+    max-width: 720px;
+  }
+
+  .heroCard {
+    max-width: 600px;
+  }
+
+  .storyGrid {
+    grid-template-columns: 1fr;
+
+    gap: 40px;
+  }
+
+  .missionGrid {
+    grid-template-columns: 1fr;
+  }
+
+  .processGrid,
+  .valuesGrid {
+    grid-template-columns: repeat(2, 1fr);
+  }
+
+  .valuesHeader {
+    grid-template-columns: 1fr;
+
+    gap: 25px;
+  }
+
+  .cta {
+    flex-direction: column;
+    align-items: flex-start;
+
+    padding: 50px;
+  }
+}
+
+/* =========================
+   MOBILE
+========================= */
+
+@media (max-width: 600px) {
+  .hero {
+    padding: 65px 0 75px;
+  }
+
+  .heroContent h1 {
+    font-size: 44px;
+
+    letter-spacing: -2.3px;
+  }
+
+  .heroContent p {
+    font-size: 15px;
+  }
+
+  .heroCardContent {
+    padding: 32px 25px;
+  }
+
+  .heroCardContent h2 {
+    font-size: 26px;
+  }
+
+  .cardFooter {
+    grid-template-columns: 1fr;
+  }
+
+  .story {
+    padding: 80px 0;
+  }
+
+  .sectionTitle h2 {
+    font-size: 37px;
+  }
+
+  .storyText p {
+    font-size: 14px;
+  }
+
+  .missionSection {
+    padding-bottom: 80px;
+  }
+
+  .missionCard {
+    min-height: auto;
+
+    padding: 30px;
+  }
+
+  .missionNumber {
+    margin-bottom: 45px;
+  }
+
+  .missionCard h3 {
+    font-size: 25px;
+  }
+
+  .processSection {
+    padding: 80px 0;
+  }
+
+  .processHeader {
+    margin-bottom: 40px;
+  }
+
+  .processHeader h2 {
+    font-size: 37px;
+  }
+
+  .processGrid {
+    grid-template-columns: 1fr;
+  }
+
+  .processCard {
+    min-height: auto;
+  }
+
+  .valuesSection {
+    padding: 80px 0;
+  }
+
+  .valuesHeader {
+    margin-bottom: 40px;
+  }
+
+  .valuesHeader h2 {
+    font-size: 37px;
+  }
+
+  .valuesGrid {
+    grid-template-columns: 1fr;
+  }
+
+  .valueCard {
+    min-height: auto;
+  }
+
+  .valueNumber {
+    margin-bottom: 35px;
+  }
+
+  .ctaSection {
+    padding-bottom: 80px;
+  }
+
+  .cta {
+    min-height: auto;
+
+    gap: 35px;
+
+    padding: 38px 28px;
+  }
+
+  .ctaContent h2 {
+    font-size: 32px;
+  }
+
+  .ctaButton {
+    width: 100%;
+
+    justify-content: center;
+  }
+}

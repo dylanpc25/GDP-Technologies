@@ -1,0 +1,786 @@
+.hero {
+  position: relative;
+  min-height: calc(100vh - 88px);
+
+  display: flex;
+  align-items: center;
+
+  overflow: hidden;
+
+  background:
+    radial-gradient(
+      circle at 77% 25%,
+      rgba(7, 94, 232, 0.13),
+      transparent 30%
+    ),
+    radial-gradient(
+      circle at 17% 80%,
+      rgba(7, 94, 232, 0.05),
+      transparent 26%
+    ),
+    linear-gradient(
+      180deg,
+      #f8fbff 0%,
+      #ffffff 28%,
+      #ffffff 100%
+    );
+}
+
+.topGlow {
+  position: absolute;
+  top: -120px;
+  left: 50%;
+
+  width: 900px;
+  height: 260px;
+
+  transform: translateX(-50%);
+
+  background: rgba(7, 94, 232, 0.08);
+
+  filter: blur(100px);
+
+  pointer-events: none;
+}
+
+.container {
+  position: relative;
+  z-index: 2;
+
+  width: min(1200px, 92%);
+  margin: 0 auto;
+
+  display: grid;
+  grid-template-columns: 1.02fr 0.98fr;
+  align-items: center;
+
+  gap: 80px;
+
+  padding: 85px 0 95px;
+}
+
+/* =========================
+   CONTENIDO IZQUIERDO
+========================= */
+
+.content {
+  max-width: 650px;
+}
+
+.badge {
+  width: fit-content;
+
+  display: inline-flex;
+  align-items: center;
+  gap: 9px;
+
+  margin-bottom: 26px;
+  padding: 8px 14px;
+
+  border: 1px solid rgba(7, 94, 232, 0.16);
+  border-radius: 100px;
+
+  background: rgba(255, 255, 255, 0.75);
+
+  color: var(--gdp-blue);
+
+  font-size: 13px;
+  font-weight: 600;
+
+  box-shadow: 0 8px 25px rgba(7, 23, 45, 0.04);
+
+  backdrop-filter: blur(10px);
+}
+
+.badge span {
+  width: 7px;
+  height: 7px;
+
+  border-radius: 50%;
+
+  background: var(--gdp-blue);
+
+  box-shadow: 0 0 12px rgba(7, 94, 232, 0.45);
+}
+
+.content h1 {
+  max-width: 620px;
+
+  margin-bottom: 25px;
+
+  color: var(--gdp-dark-blue);
+
+  font-size: clamp(52px, 5vw, 76px);
+  font-weight: 800;
+
+  line-height: 0.99;
+  letter-spacing: -3.5px;
+}
+
+.content h1 span {
+  display: block;
+
+  color: var(--gdp-blue);
+}
+
+.content p {
+  max-width: 590px;
+
+  margin-bottom: 34px;
+
+  color: #667085;
+
+  font-size: 17px;
+  line-height: 1.75;
+}
+
+/* =========================
+   BOTONES
+========================= */
+
+.actions {
+  display: flex;
+  align-items: center;
+
+  gap: 14px;
+}
+
+.primaryButton,
+.secondaryButton {
+  min-height: 52px;
+
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+
+  padding: 0 23px;
+
+  border-radius: 10px;
+
+  font-size: 14px;
+  font-weight: 600;
+
+  transition:
+    transform 0.2s ease,
+    box-shadow 0.2s ease,
+    background 0.2s ease,
+    border-color 0.2s ease;
+}
+
+.primaryButton {
+  gap: 10px;
+
+  background: var(--gdp-blue);
+
+  color: #ffffff;
+
+  box-shadow: 0 12px 30px rgba(7, 94, 232, 0.23);
+}
+
+.primaryButton span {
+  font-size: 18px;
+
+  transition: transform 0.2s ease;
+}
+
+.primaryButton:hover {
+  transform: translateY(-2px);
+
+  box-shadow: 0 17px 38px rgba(7, 94, 232, 0.3);
+}
+
+.primaryButton:hover span {
+  transform: translateX(4px);
+}
+
+.secondaryButton {
+  border: 1px solid #d7dce4;
+
+  background: rgba(255, 255, 255, 0.85);
+
+  color: var(--gdp-dark-blue);
+}
+
+.secondaryButton:hover {
+  border-color: #b6c0ce;
+
+  background: #ffffff;
+}
+
+/* =========================
+   INFO INFERIOR
+========================= */
+
+.trust {
+  display: flex;
+  align-items: center;
+
+  gap: 24px;
+
+  margin-top: 42px;
+}
+
+.trust div:not(.separator) {
+  display: flex;
+  flex-direction: column;
+
+  gap: 3px;
+}
+
+.trust strong {
+  color: var(--gdp-dark-blue);
+
+  font-size: 14px;
+}
+
+.trust span {
+  color: #98a2b3;
+
+  font-size: 11px;
+}
+
+.separator {
+  width: 1px;
+  height: 34px;
+
+  background: #e4e7ec;
+}
+
+/* =========================
+   VISUAL DERECHO
+========================= */
+
+.visual {
+  position: relative;
+
+  min-height: 590px;
+
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.visualGlow {
+  position: absolute;
+
+  width: 470px;
+  height: 470px;
+
+  border-radius: 50%;
+
+  background: rgba(7, 94, 232, 0.14);
+
+  filter: blur(90px);
+}
+
+/* =========================
+   DASHBOARD
+========================= */
+
+.dashboard {
+  position: relative;
+  z-index: 2;
+
+  width: 100%;
+  max-width: 520px;
+
+  overflow: hidden;
+
+  border: 1px solid rgba(255, 255, 255, 0.08);
+  border-radius: 22px;
+
+  background: #07172d;
+
+  box-shadow:
+    0 35px 90px rgba(7, 23, 45, 0.2),
+    0 10px 30px rgba(7, 94, 232, 0.08);
+}
+
+.dashboardHeader {
+  height: 51px;
+
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+
+  padding: 0 18px;
+
+  border-bottom: 1px solid rgba(255, 255, 255, 0.07);
+
+  background: #0a1b32;
+}
+
+.windowControls {
+  display: flex;
+
+  gap: 7px;
+}
+
+.windowControls span {
+  width: 8px;
+  height: 8px;
+
+  border-radius: 50%;
+
+  background: rgba(255, 255, 255, 0.2);
+}
+
+.dashboardTitle {
+  color: rgba(255, 255, 255, 0.45);
+
+  font-size: 12px;
+  font-weight: 500;
+
+  letter-spacing: 1px;
+}
+
+.dashboardBody {
+  padding: 38px;
+}
+
+.dashboardLabel {
+  display: block;
+
+  margin-bottom: 14px;
+
+  color: #75adff;
+
+  font-size: 12px;
+  font-weight: 700;
+
+  letter-spacing: 2.5px;
+}
+
+.dashboard h2 {
+  margin-bottom: 30px;
+
+  color: #ffffff;
+
+  font-size: 34px;
+  font-weight: 700;
+
+  line-height: 1.22;
+  letter-spacing: -1.1px;
+}
+
+/* =========================
+   CÓDIGO
+========================= */
+
+.codeCard {
+  display: flex;
+  flex-direction: column;
+
+  gap: 13px;
+
+  padding: 21px;
+
+  border: 1px solid rgba(255, 255, 255, 0.07);
+  border-radius: 12px;
+
+  background: rgba(0, 0, 0, 0.23);
+}
+
+.codeCard > div {
+  display: flex;
+  align-items: center;
+
+  gap: 14px;
+}
+
+.lineNumber {
+  width: 20px;
+
+  flex-shrink: 0;
+
+  color: rgba(255, 255, 255, 0.22);
+
+  font-family: monospace;
+  font-size: 11px;
+}
+
+.codeCard code {
+  font-family:
+    "Courier New",
+    monospace;
+
+  font-size: 14px;
+  line-height: 1.6;
+}
+
+.blue {
+  color: #77acff;
+}
+
+.white {
+  color: #e2e8f0;
+}
+
+.green {
+  color: #75e2a5;
+}
+
+.yellow {
+  color: #ffd276;
+}
+
+.comment {
+  color: rgba(255, 255, 255, 0.34);
+}
+
+/* =========================
+   FOOTER DASHBOARD
+========================= */
+
+.dashboardFooter {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+
+  margin-top: 25px;
+}
+
+.status {
+  display: flex;
+  align-items: center;
+
+  gap: 8px;
+
+  color: rgba(255, 255, 255, 0.62);
+
+  font-size: 13px;
+}
+
+.status span {
+  width: 7px;
+  height: 7px;
+
+  border-radius: 50%;
+
+  background: #3bd581;
+
+  box-shadow: 0 0 11px rgba(59, 213, 129, 0.7);
+}
+
+.version {
+  color: rgba(255, 255, 255, 0.3);
+
+  font-size: 11px;
+}
+
+/* =========================
+   TARJETAS FLOTANTES
+========================= */
+
+.floatingCard {
+  position: absolute;
+  z-index: 4;
+
+  display: flex;
+  align-items: center;
+
+  gap: 12px;
+
+  min-width: 200px;
+
+  padding: 14px 16px;
+
+  border: 1px solid rgba(7, 23, 45, 0.08);
+  border-radius: 13px;
+
+  background: rgba(255, 255, 255, 0.94);
+
+  box-shadow: 0 16px 35px rgba(7, 23, 45, 0.12);
+
+  backdrop-filter: blur(12px);
+}
+
+.floatingCard > div:last-child {
+  display: flex;
+  flex-direction: column;
+
+  gap: 4px;
+}
+
+.floatingCard strong {
+  color: var(--gdp-dark-blue);
+
+  font-size: 13px;
+  font-weight: 700;
+}
+
+.floatingCard div span {
+  color: #98a2b3;
+
+  font-size: 11px;
+}
+
+.icon {
+  width: 39px;
+  height: 39px;
+
+  display: flex;
+  align-items: center;
+  justify-content: center;
+
+  flex-shrink: 0;
+
+  border-radius: 9px;
+
+  background: rgba(7, 94, 232, 0.08);
+
+  color: var(--gdp-blue);
+
+  font-size: 13px;
+  font-weight: 700;
+}
+
+.statusIcon {
+  width: 39px;
+  height: 39px;
+
+  display: flex;
+  align-items: center;
+  justify-content: center;
+
+  flex-shrink: 0;
+
+  border-radius: 9px;
+
+  background: rgba(59, 213, 129, 0.1);
+}
+
+.statusIcon span {
+  width: 9px;
+  height: 9px;
+
+  border-radius: 50%;
+
+  background: #3bd581;
+
+  box-shadow: 0 0 10px rgba(59, 213, 129, 0.6);
+}
+
+.webCard {
+  top: 90px;
+  left: -35px;
+}
+
+.appCard {
+  right: -25px;
+  bottom: 95px;
+}
+
+.supportCard {
+  left: -10px;
+  bottom: 28px;
+
+  min-width: 180px;
+
+  transform: scale(0.96);
+}
+
+/* =========================
+   BADGE INFERIOR
+========================= */
+
+.bottomBadge {
+  position: absolute;
+  z-index: 3;
+
+  right: 40px;
+  bottom: 10px;
+
+  display: flex;
+  align-items: center;
+
+  gap: 8px;
+
+  padding: 10px 16px;
+
+  border: 1px solid rgba(7, 23, 45, 0.08);
+  border-radius: 100px;
+
+  background: rgba(255, 255, 255, 0.92);
+
+  color: #667085;
+
+  font-size: 11px;
+  font-weight: 600;
+
+  box-shadow: 0 10px 25px rgba(7, 23, 45, 0.07);
+}
+
+.bottomBadge span {
+  width: 6px;
+  height: 6px;
+
+  border-radius: 50%;
+
+  background: var(--gdp-blue);
+}
+
+/* =========================
+   TABLET
+========================= */
+
+@media (max-width: 980px) {
+  .hero {
+    min-height: auto;
+  }
+
+  .container {
+    grid-template-columns: 1fr;
+
+    gap: 55px;
+
+    padding: 75px 0 90px;
+  }
+
+  .content {
+    max-width: 720px;
+
+    margin: 0 auto;
+
+    text-align: center;
+  }
+
+  .badge {
+    margin-left: auto;
+    margin-right: auto;
+  }
+
+  .content h1 {
+    margin-left: auto;
+    margin-right: auto;
+  }
+
+  .content p {
+    margin-left: auto;
+    margin-right: auto;
+  }
+
+  .actions {
+    justify-content: center;
+  }
+
+  .trust {
+    justify-content: center;
+  }
+
+  .visual {
+    width: min(620px, 100%);
+
+    margin: 0 auto;
+  }
+
+  .webCard {
+    left: 0;
+  }
+
+  .appCard {
+    right: 0;
+  }
+
+  .supportCard {
+    left: 20px;
+  }
+}
+
+/* =========================
+   MOBILE
+========================= */
+
+@media (max-width: 600px) {
+  .container {
+    width: min(92%, 500px);
+
+    padding: 55px 0 75px;
+  }
+
+  .content h1 {
+    font-size: 43px;
+
+    line-height: 1.02;
+    letter-spacing: -2.3px;
+  }
+
+  .content p {
+    font-size: 15px;
+  }
+
+  .actions {
+    flex-direction: column;
+  }
+
+  .primaryButton,
+  .secondaryButton {
+    width: 100%;
+  }
+
+  .trust {
+    gap: 17px;
+  }
+
+  .visual {
+    min-height: auto;
+
+    padding: 20px 0 55px;
+  }
+
+  .dashboard {
+    border-radius: 17px;
+  }
+
+  .dashboardBody {
+    padding: 27px 21px;
+  }
+
+  .dashboardTitle {
+    font-size: 10px;
+  }
+
+  .dashboardLabel {
+    font-size: 10px;
+  }
+
+  .dashboard h2 {
+    font-size: 26px;
+  }
+
+  .codeCard {
+    padding: 16px;
+  }
+
+  .codeCard code {
+    font-size: 10px;
+  }
+
+  .lineNumber {
+    font-size: 9px;
+  }
+
+  .status {
+    font-size: 11px;
+  }
+
+  .version {
+    font-size: 9px;
+  }
+
+  .floatingCard {
+    display: none;
+  }
+
+  .bottomBadge {
+    left: 50%;
+    right: auto;
+    bottom: 5px;
+
+    transform: translateX(-50%);
+
+    white-space: nowrap;
+
+    font-size: 10px;
+  }
+}
