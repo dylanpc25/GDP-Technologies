@@ -1,3 +1,4 @@
+import { Link } from "react-router-dom";
 import styles from "./Services.module.css";
 
 const services = [
@@ -5,6 +6,7 @@ const services = [
     number: "01",
     icon: "</>",
     title: "Desarrollo Web",
+    slug: "desarrollo-web",
     description:
       "Creamos sitios web modernos, rápidos y responsivos enfocados en ofrecer una excelente experiencia a tus clientes.",
     tags: ["React", "Web", "Responsive"],
@@ -13,6 +15,7 @@ const services = [
     number: "02",
     icon: "⌘",
     title: "Sistemas",
+    slug: "sistemas",
     description:
       "Desarrollamos sistemas empresariales adaptados a los procesos y necesidades específicas de tu organización.",
     tags: ["Automatización", "Gestión", "Software"],
@@ -21,6 +24,7 @@ const services = [
     number: "03",
     icon: "▦",
     title: "Aplicaciones",
+    slug: "aplicaciones",
     description:
       "Construimos aplicaciones digitales intuitivas, escalables y preparadas para acompañar el crecimiento de tu negocio.",
     tags: ["Apps", "UX/UI", "Escalabilidad"],
@@ -29,6 +33,7 @@ const services = [
     number: "04",
     icon: "◇",
     title: "Consultoría",
+    slug: "consultoria",
     description:
       "Analizamos tus necesidades tecnológicas y te ayudamos a encontrar las mejores soluciones para alcanzar tus objetivos.",
     tags: ["Estrategia", "Tecnología", "Optimización"],
@@ -37,6 +42,7 @@ const services = [
     number: "05",
     icon: "●",
     title: "Soporte",
+    slug: "soporte",
     description:
       "Te acompañamos después de cada implementación con mantenimiento, mejoras y soporte para tus soluciones digitales.",
     tags: ["Mantenimiento", "Mejoras", "Asistencia"],
@@ -45,6 +51,7 @@ const services = [
     number: "06",
     icon: "🖥",
     title: "Soporte de Hardware",
+    slug: "soporte-hardware",
     description:
       "Brindamos asistencia técnica para computadoras y equipos tecnológicos, incluyendo diagnóstico de fallas, configuración, instalación de componentes y solución de problemas.",
     tags: ["Diagnóstico", "Configuración", "Reparación"],
@@ -53,6 +60,7 @@ const services = [
     number: "07",
     icon: "⚙",
     title: "Mantenimiento de Hardware",
+    slug: "mantenimiento-hardware",
     description:
       "Realizamos mantenimiento preventivo y correctivo de equipos para prolongar su vida útil, mejorar su rendimiento y prevenir fallas.",
     tags: ["Limpieza", "Optimización", "Prevención"],
@@ -82,15 +90,11 @@ export const Services = () => {
 
         <div className={styles.grid}>
           {services.map((service) => (
-            <article className={styles.card} key={service.title}>
+            <article className={styles.card} key={service.slug}>
               <div className={styles.cardTop}>
-                <div className={styles.icon}>
-                  {service.icon}
-                </div>
+                <div className={styles.icon}>{service.icon}</div>
 
-                <span className={styles.number}>
-                  {service.number}
-                </span>
+                <span className={styles.number}>{service.number}</span>
               </div>
 
               <div className={styles.cardContent}>
@@ -105,10 +109,13 @@ export const Services = () => {
                 ))}
               </div>
 
-              <a href="#contacto" className={styles.cardLink}>
+              <Link
+                to={`/contacto?servicio=${service.slug}`}
+                className={styles.cardLink}
+              >
                 Quiero saber más
                 <span>→</span>
-              </a>
+              </Link>
             </article>
           ))}
 
@@ -116,9 +123,7 @@ export const Services = () => {
             <div className={styles.ctaGlow}></div>
 
             <div className={styles.ctaContent}>
-              <span className={styles.ctaLabel}>
-                ¿TIENES UNA IDEA?
-              </span>
+              <span className={styles.ctaLabel}>¿TIENES UNA IDEA?</span>
 
               <h3>
                 Hagamos realidad
@@ -131,10 +136,10 @@ export const Services = () => {
                 tecnológica adecuada para tu negocio.
               </p>
 
-              <a href="#contacto" className={styles.ctaButton}>
+              <Link to="/contacto" className={styles.ctaButton}>
                 Hablemos
                 <span>→</span>
-              </a>
+              </Link>
             </div>
           </article>
         </div>

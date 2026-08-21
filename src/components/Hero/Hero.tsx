@@ -1,3 +1,4 @@
+import { Link } from "react-router-dom";
 import styles from "./Hero.module.css";
 
 export const Hero = () => {
@@ -24,14 +25,14 @@ export const Hero = () => {
           </p>
 
           <div className={styles.actions}>
-            <a href="#contacto" className={styles.primaryButton}>
+            <Link to="/contacto" className={styles.primaryButton}>
               Cuéntanos tu idea
               <span>→</span>
-            </a>
+            </Link>
 
-            <a href="#servicios" className={styles.secondaryButton}>
+            <Link to="/servicios" className={styles.secondaryButton}>
               Ver servicios
-            </a>
+            </Link>
           </div>
 
           <div className={styles.trust}>
