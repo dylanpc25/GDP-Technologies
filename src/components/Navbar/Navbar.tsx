@@ -1,13 +1,25 @@
+import { useState } from "react";
 import { NavLink } from "react-router-dom";
 
 import styles from "./Navbar.module.css";
 import logo from "../../assets/images/gdp-logo.png";
 
 export const Navbar = () => {
+  const [menuOpen, setMenuOpen] = useState(false);
+
+  const closeMenu = () => {
+    setMenuOpen(false);
+  };
+
   return (
     <header className={styles.header}>
       <nav className={styles.navbar}>
-        <NavLink to="/" className={styles.logoWrapper}>
+        {/* LOGO */}
+        <NavLink
+          to="/"
+          className={styles.logoWrapper}
+          onClick={closeMenu}
+        >
           <div className={styles.logoBox}>
             <img
               src={logo}
@@ -17,9 +29,15 @@ export const Navbar = () => {
           </div>
         </NavLink>
 
-        <div className={styles.links}>
+        {/* LINKS */}
+        <div
+          className={`${styles.links} ${
+            menuOpen ? styles.linksOpen : ""
+          }`}
+        >
           <NavLink
             to="/"
+            onClick={closeMenu}
             className={({ isActive }) =>
               isActive ? styles.active : undefined
             }
@@ -29,6 +47,7 @@ export const Navbar = () => {
 
           <NavLink
             to="/servicios"
+            onClick={closeMenu}
             className={({ isActive }) =>
               isActive ? styles.active : undefined
             }
@@ -38,6 +57,7 @@ export const Navbar = () => {
 
           <NavLink
             to="/nosotros"
+            onClick={closeMenu}
             className={({ isActive }) =>
               isActive ? styles.active : undefined
             }
@@ -46,7 +66,18 @@ export const Navbar = () => {
           </NavLink>
 
           <NavLink
+            to="/equipo"
+            onClick={closeMenu}
+            className={({ isActive }) =>
+              isActive ? styles.active : undefined
+            }
+          >
+            Equipo
+          </NavLink>
+
+          <NavLink
             to="/proyectos"
+            onClick={closeMenu}
             className={({ isActive }) =>
               isActive ? styles.active : undefined
             }
@@ -55,9 +86,30 @@ export const Navbar = () => {
           </NavLink>
         </div>
 
-        <NavLink to="/contacto" className={styles.contactButton}>
-          Contáctanos
-        </NavLink>
+        {/* ACCIONES DERECHA */}
+        <div className={styles.actions}>
+          <NavLink
+            to="/contacto"
+            className={styles.contactButton}
+            onClick={closeMenu}
+          >
+            Contáctanos
+          </NavLink>
+
+          <button
+            type="button"
+            className={`${styles.menuButton} ${
+              menuOpen ? styles.menuButtonOpen : ""
+            }`}
+            onClick={() => setMenuOpen((open) => !open)}
+            aria-label={menuOpen ? "Cerrar menú" : "Abrir menú"}
+            aria-expanded={menuOpen}
+          >
+            <span />
+            <span />
+            <span />
+          </button>
+        </div>
       </nav>
     </header>
   );
