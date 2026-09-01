@@ -22,6 +22,8 @@
 ================================ */
 
 .navbar {
+  position: relative;
+
   width: min(1180px, 92%);
   height: 104px;
 
@@ -46,6 +48,8 @@
   display: flex;
   align-items: center;
   justify-content: flex-start;
+
+  text-decoration: none;
 }
 
 .logoBox {
@@ -113,12 +117,6 @@
 
   pointer-events: none;
 }
-
-/*
-  IMPORTANTE:
-  mantenemos el PNG completo,
-  pero ahora sí cabe dentro del header.
-*/
 
 .logoImage {
   position: relative;
@@ -207,12 +205,23 @@
 }
 
 /* ==============================
+   RIGHT ACTIONS
+================================ */
+
+.actions {
+  justify-self: end;
+
+  display: flex;
+  align-items: center;
+
+  gap: 12px;
+}
+
+/* ==============================
    CONTACT BUTTON
 ================================ */
 
 .contactButton {
-  justify-self: end;
-
   display: inline-flex;
   align-items: center;
   justify-content: center;
@@ -229,6 +238,8 @@
 
   font-size: 14px;
   font-weight: 600;
+
+  white-space: nowrap;
 
   text-decoration: none;
 
@@ -251,6 +262,63 @@
 }
 
 /* ==============================
+   HAMBURGER BUTTON
+================================ */
+
+.menuButton {
+  display: none;
+
+  width: 42px;
+  height: 42px;
+
+  padding: 8px;
+
+  background: transparent;
+
+  border: none;
+  border-radius: 8px;
+
+  cursor: pointer;
+
+  transition: background 0.2s ease;
+}
+
+.menuButton:hover {
+  background: rgba(255, 255, 255, 0.08);
+}
+
+.menuButton span {
+  display: block;
+
+  width: 25px;
+  height: 2px;
+
+  margin: 5px auto;
+
+  background: #ffffff;
+
+  border-radius: 20px;
+
+  transition:
+    transform 0.25s ease,
+    opacity 0.25s ease;
+}
+
+/* Hamburguesa -> X */
+
+.menuButtonOpen span:nth-child(1) {
+  transform: translateY(7px) rotate(45deg);
+}
+
+.menuButtonOpen span:nth-child(2) {
+  opacity: 0;
+}
+
+.menuButtonOpen span:nth-child(3) {
+  transform: translateY(-7px) rotate(-45deg);
+}
+
+/* ==============================
    TABLET
 ================================ */
 
@@ -263,13 +331,13 @@
     width: 94%;
     height: 96px;
 
-    grid-template-columns: 180px 1fr 170px;
+    grid-template-columns: 170px 1fr 170px;
 
-    gap: 20px;
+    gap: 18px;
   }
 
   .logoWrapper {
-    width: 170px;
+    width: 165px;
     height: 96px;
   }
 
@@ -286,7 +354,7 @@
   .links {
     height: 96px;
 
-    gap: 24px;
+    gap: 20px;
   }
 
   .links a {
@@ -297,6 +365,12 @@
 
   .links a::after {
     bottom: 22px;
+  }
+
+  .contactButton {
+    padding: 0 18px;
+
+    font-size: 13px;
   }
 }
 
@@ -310,16 +384,23 @@
   }
 
   .navbar {
+    width: 94%;
     height: 82px;
 
     display: flex;
     align-items: center;
     justify-content: space-between;
+
+    gap: 10px;
   }
+
+  /* Logo */
 
   .logoWrapper {
     width: auto;
     height: 82px;
+
+    flex-shrink: 0;
   }
 
   .logoBox {
@@ -334,16 +415,131 @@
     height: 92px;
   }
 
-  .links {
-    display: none;
+  /* Acciones derecha */
+
+  .actions {
+    margin-left: auto;
+
+    display: flex;
+    align-items: center;
+
+    gap: 8px;
   }
 
   .contactButton {
     height: 40px;
 
-    padding: 0 17px;
+    padding: 0 15px;
 
     font-size: 13px;
+  }
+
+  /* Mostrar hamburguesa */
+
+  .menuButton {
+    display: block;
+
+    flex-shrink: 0;
+  }
+
+  /* ==============================
+     MOBILE DROPDOWN
+  ================================ */
+
+  .links {
+    position: absolute;
+
+    top: 82px;
+    left: 50%;
+
+    width: 100vw;
+    height: auto;
+
+    box-sizing: border-box;
+
+    display: flex;
+    flex-direction: column;
+
+    align-items: stretch;
+    justify-content: flex-start;
+
+    gap: 0;
+
+    padding: 10px 22px 18px;
+
+    background: #0b1d35;
+
+    border-top: 1px solid rgba(255, 255, 255, 0.08);
+
+    box-shadow: 0 16px 30px rgba(0, 0, 0, 0.2);
+
+    opacity: 0;
+    visibility: hidden;
+
+    pointer-events: none;
+
+    transform: translate(-50%, -10px);
+
+    transition:
+      opacity 0.25s ease,
+      transform 0.25s ease,
+      visibility 0.25s ease;
+  }
+
+  /* Menú abierto */
+
+  .linksOpen {
+    opacity: 1;
+    visibility: visible;
+
+    pointer-events: auto;
+
+    transform: translate(-50%, 0);
+  }
+
+  /* Links del menú */
+
+  .links a {
+    width: 100%;
+    height: auto;
+
+    box-sizing: border-box;
+
+    display: flex;
+    align-items: center;
+
+    padding: 16px 8px;
+
+    color: rgba(255, 255, 255, 0.82);
+
+    font-size: 15px;
+    font-weight: 600;
+
+    border-bottom: 1px solid rgba(255, 255, 255, 0.08);
+  }
+
+  .links a:last-child {
+    border-bottom: none;
+  }
+
+  .links a:hover {
+    color: #ffffff;
+
+    background: rgba(255, 255, 255, 0.04);
+  }
+
+  /* Quitar línea de escritorio */
+
+  .links a::after {
+    display: none;
+  }
+
+  /* Página seleccionada */
+
+  .links .active {
+    color: #4c8dff !important;
+
+    background: rgba(22, 112, 255, 0.08);
   }
 }
 
@@ -353,7 +549,9 @@
 
 @media (max-width: 480px) {
   .navbar {
-    width: 92%;
+    width: 94%;
+
+    gap: 5px;
   }
 
   .logoBox {
@@ -366,11 +564,73 @@
     height: 86px;
   }
 
+  .actions {
+    gap: 4px;
+  }
+
   .contactButton {
     height: 38px;
 
-    padding: 0 14px;
+    padding: 0 11px;
 
     font-size: 12px;
+  }
+
+  .menuButton {
+    width: 38px;
+    height: 38px;
+
+    padding: 6px;
+  }
+
+  .menuButton span {
+    width: 22px;
+  }
+
+  .links {
+    padding: 8px 18px 16px;
+  }
+
+  .links a {
+    padding: 15px 8px;
+
+    font-size: 14px;
+  }
+}
+
+/* ==============================
+   VERY SMALL MOBILE
+================================ */
+
+@media (max-width: 360px) {
+  .navbar {
+    width: 96%;
+  }
+
+  .logoBox {
+    width: 105px;
+    height: 58px;
+  }
+
+  .logoImage {
+    width: 80px;
+    height: 80px;
+  }
+
+  .contactButton {
+    height: 36px;
+
+    padding: 0 9px;
+
+    font-size: 11px;
+  }
+
+  .menuButton {
+    width: 36px;
+    height: 36px;
+  }
+
+  .menuButton span {
+    width: 20px;
   }
 }
