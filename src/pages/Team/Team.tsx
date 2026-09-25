@@ -44,7 +44,7 @@ const teamMembers = [
 
   {
     name: "Joseph Mora Sánchez",
-    role: "Administrador de ",
+    role: "Administrador",
     position: "Administrador especialista en Finanzas",
     image: josephImage,
 
