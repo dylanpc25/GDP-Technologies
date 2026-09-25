@@ -3,6 +3,7 @@ import "./Team.css";
 import dylanImage from "../../assets/images/dylanpalmalinkedin.jpg";
 import gabrielImage from "../../assets/images/gabrielherreralinkedin.jpg";
 import pabloImage from "../../assets/images/pablocamposlinkedin.jpg";
+import josephImage from "../../assets/images/josephmoralinkedin.jpg";
 
 const teamMembers = [
   {
@@ -39,6 +40,17 @@ const teamMembers = [
       "https://www.linkedin.com/in/pablo-campos-barrantes/",
     github: "https://github.com/pcampos19",
     whatsapp: "50671022021",
+  },
+
+  {
+    name: "Joseph Mora Sánchez",
+    role: "Administrador de ",
+    position: "Administrador especialista en Finanzas",
+    image: josephImage,
+
+    linkedin:
+      "https://www.linkedin.com/in/joseph-mora-s%C3%A1nchez-89025428a/",
+    whatsapp: "50687838525",
   },
 ];
 
